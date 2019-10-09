@@ -134,7 +134,7 @@ class BagOfWordsPreprocessor:
         t = "<" + self.__ents[name][0] + "_" + self.__ents[name][1] + ">"
         return t
 
-    def preprocess(self, text):
+    def preprocess(self, text, hard_url_replace=True):
         text = self.__clean_whitespaces(text)
         text = self.__clean_stopsymbols(text)
 
@@ -148,7 +148,8 @@ class BagOfWordsPreprocessor:
             lang='en'
         )
 
-        text = url_cleaner(text)
+        if hard_url_replace:
+            text = url_cleaner(text)
 
         tokens = self.__tokenize(text)
         tokens = [
