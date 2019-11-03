@@ -108,9 +108,12 @@ dmypy.json
 .pyre/
 
 *.txt
+*.model
 /news_explorer/news/
 /news_explorer/news_corpus/
 *.dict
 *.mm
 *.mm.index
 /nlp
+/*/data
+
